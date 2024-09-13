@@ -1,0 +1,151 @@
+{
+  "project": {
+    "id": "xpx0zr",
+    "name": "Reza-test",
+    "creationTs": 1726229977313,
+    "lastModifiedTs": 1726232465554,
+    "userSetData": {
+      "description": "",
+      "tags": [],
+      "contactURL": "",
+      "tutorialYouTube": ""
+    }
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "object_detection_ierxwh",
+        "nodeSpecId": "object_detection",
+        "customData": {
+          "previewX": 1807,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 336,
+          "posY": 167,
+          "width": 176,
+          "height": 130,
+          "selected": false
+        },
+        "propValues": {
+          "score": 0.5,
+          "boxesCount": 20
+        },
+        "incomingEdges": {
+          "image": [
+            {
+              "sourceNodeId": "input_image_xwamns",
+              "outputId": "image"
+            }
+          ]
+        }
+      },
+      {
+        "id": "logger-node_phn5s9",
+        "nodeSpecId": "logger-node",
+        "customData": {
+          "rightOfNode": "object_detection_ierxwh",
+          "previewX": 910,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 699,
+          "posY": 216,
+          "width": 176,
+          "height": 68,
+          "selected": false
+        },
+        "inputValues": {
+          "data": []
+        },
+        "incomingEdges": {
+          "data": [
+            {
+              "sourceNodeId": "object_detection_ierxwh",
+              "outputId": "objectDetectionResult"
+            }
+          ]
+        }
+      },
+      {
+        "id": "input_image_xwamns",
+        "nodeSpecId": "input_image",
+        "customData": {
+          "initialWidth": 448,
+          "initialHeight": 240,
+          "previewX": 16,
+          "previewY": 16,
+          "previewWidth": 448,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 0,
+          "posY": 80,
+          "width": 176,
+          "height": 180,
+          "selected": false
+        },
+        "propValues": {
+          "urls": [
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic1.jpg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic2.jpeg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic3.jpg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic4.jpeg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic5.jpg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic6.jpg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic7.jpeg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic8.jpg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic9.jpg",
+            "image=mhfowr"
+          ],
+          "gridColumnCount": 3,
+          "allowUserUpload": true,
+          "selectedImageUrl": "image=mhfowr",
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "bounding_box_visualizer_4f9l9a",
+        "nodeSpecId": "bounding_box_visualizer",
+        "customData": {
+          "rightOfNode": "object_detection_ierxwh",
+          "previewX": 480,
+          "previewY": 16,
+          "previewWidth": 414,
+          "previewHeight": 421
+        },
+        "uiData": {
+          "posX": 672,
+          "posY": 0,
+          "width": 230,
+          "height": 180,
+          "selected": false
+        },
+        "propValues": {
+          "keypointScale": 1,
+          "color": "#08f7fe",
+          "hidePreview": false
+        },
+        "incomingEdges": {
+          "boundingBoxResult": [
+            {
+              "sourceNodeId": "object_detection_ierxwh",
+              "outputId": "objectDetectionResult"
+            }
+          ],
+          "image": [
+            {
+              "sourceNodeId": "input_image_xwamns",
+              "outputId": "image"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "customNodeUrls": []
+}
